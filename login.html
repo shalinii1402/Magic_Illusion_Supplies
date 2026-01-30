@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MysticArcana</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color);
+        }
+
+        .auth-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .auth-box {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.6s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-box .logo {
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            pointer-events: auto;
+        }
+
+        .auth-box h2 {
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-size: 2rem;
+            text-shadow: none;
+            text-align: center;
+        }
+
+        .auth-box p.subtitle {
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .auth-box input {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .auth-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px var(--primary-glow);
+            background: var(--bg-card);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .password-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .separator:not(:empty)::before {
+            margin-right: 1em;
+        }
+
+        .separator:not(:empty)::after {
+            margin-left: 1em;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px var(--primary-glow);
+        }
+
+        .social-btn.google:hover {
+            background: #DB4437;
+            border-color: #DB4437;
+            box-shadow: 0 10px 20px rgba(219, 68, 55, 0.2);
+        }
+
+        .social-btn.facebook:hover {
+            background: #4267B2;
+            border-color: #4267B2;
+            box-shadow: 0 10px 20px rgba(66, 103, 178, 0.2);
+        }
+
+        .auth-footer {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .auth-footer a {
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .auth-footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .back-home {
+            margin-top: 20px;
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .back-home:hover {
+            color: var(--text-primary);
+        }
+
+        /* Floating Theme Toggle */
+        .theme-toggle-fixed {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle-fixed:hover {
+            transform: rotate(15deg) scale(1.1);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Background Decorative Elements */
+        .bg-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .bg-glow-1 {
+            top: -100px;
+            left: -100px;
+        }
+
+        .bg-glow-2 {
+            bottom: -100px;
+            right: -100px;
+        }
+
+        @media (max-width: 480px) {
+            .auth-box {
+                padding: 30px 20px;
+                border-radius: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border: none;
+            }
+
+            body {
+                overflow: auto;
+            }
+
+            .auth-container {
+                padding: 0;
+            }
+
+            .theme-toggle-fixed {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <button class="theme-toggle-fixed" id="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="MysticArcana Logo">
+                Mystic<span>Arcana</span>
+            </a>
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Enter your magical credentials to continue</p>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" id="toggle-password"></i>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Login</button>
+            </form>
+
+            <div class="separator">OR continue with</div>
+
+            <div class="social-login">
+                <a href="#" class="social-btn google" title="Login with Google">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-btn facebook" title="Login with Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+
+            <div class="auth-footer">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </div>
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i>Back to
+                Home</a>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Password Visibility Toggle
+        const togglePassword = document.querySelector('#toggle-password');
+        const passwordInput = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+
+    </script>
+</body>
+
+</html>

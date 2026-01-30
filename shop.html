@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Magic - MysticArcana</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 160px 20px 80px;
+            text-align: center;
+            margin-top: -80px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Ensure overlay applies specifically for text contrast */
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Additional Dark Overlay */
+            z-index: 1;
+        }
+
+        /* Light Theme specific overlay */
+        [data-theme="light"] .page-header::before {
+            background: rgba(255, 255, 255, 0.3);
+            /* Lighter overlay for light theme */
+        }
+
+        .page-header h1,
+        .page-header p {
+            position: relative;
+            z-index: 2;
+            /* Bring text above overlay */
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            /* Always white on dark bg in dark mode */
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            font-weight: 500;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Light Theme Text Adjustments override */
+        [data-theme="light"] .page-header h1 {
+            color: var(--primary-color);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        [data-theme="light"] .page-header p {
+            color: #333;
+            text-shadow: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 140px 20px 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .shop-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            margin: 60px auto;
+        }
+
+        .filters {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 100px;
+        }
+
+        .filter-group {
+            margin-bottom: 30px;
+        }
+
+        .filter-group h4 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .filter-option {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .filter-option:hover {
+            color: var(--primary-color);
+        }
+
+        .filter-option input {
+            margin-right: 10px;
+        }
+
+        .filter-price-range {
+            width: 100%;
+        }
+
+        .sort-bar {
+            background: var(--bg-card);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sort-select {
+            background: var(--bg-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .shop-container {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                    alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+
+            <nav class="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
+                    <li><a href="live-shows.html" class="nav-link">Live Shows</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="mobile-only"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm desktop-only">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm desktop-only">Sign Up</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Shop Magic Tricks</h1>
+        <p>Explore our premium collection of illusions</p>
+    </div>
+
+    <div class="container shop-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters">
+            <div class="filter-group">
+                <h4>Categories</h4>
+                <label class="filter-option"><input type="checkbox"> Card Magic</label>
+                <label class="filter-option"><input type="checkbox"> Close-Up</label>
+                <label class="filter-option"><input type="checkbox"> Mentalism</label>
+                <label class="filter-option"><input type="checkbox"> Stage Illusions</label>
+                <label class="filter-option"><input type="checkbox"> Street Magic</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Skill Level</h4>
+                <label class="filter-option"><input type="checkbox"> Beginner</label>
+                <label class="filter-option"><input type="checkbox"> Intermediate</label>
+                <label class="filter-option"><input type="checkbox"> Professional</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <input type="range" class="filter-price-range" min="0" max="500">
+                <div
+                    style="margin-top: 5px; display: flex; justify-content: space-between; color: var(--text-secondary); font-size: 0.9rem;">
+                    <span>$0</span><span>$500+</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <main>
+            <div class="sort-bar">
+                <span>Showing 1-6 of 24 results</span>
+                <select class="sort-select">
+                    <option>Sort by: Popularity</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest Arrivals</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/product-cards.png" alt="Ghostly Card Deck">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Ghostly Card Deck</h4>
+                        <span class="product-price">$24.99</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/product-levitation.png" alt="Levitation Ring">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Levitation Ring</h4>
+                        <span class="product-price">$49.99</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/product-flame.png" alt="Eternal Flame Wallet">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Eternal Flame Wallet</h4>
+                        <span class="product-price">$35.00</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Products (Reusing images for demo) -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/7179824/pexels-photo-7179824.jpeg" alt="Marked Deck">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Marked Deck Pro</h4>
+                        <span class="product-price">$19.99</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/19390704/pexels-photo-19390704.jpeg" alt="Fire Cane">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Vanishing Fire Cane</h4>
+                        <span class="product-price">$55.00</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/8391394/pexels-photo-8391394.jpeg"
+                            alt="Invisible Thread">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Invisible Thread Reel</h4>
+                        <span class="product-price">$29.99</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Existing Product Grid (Keep as is, but ensure more products) -->
+            </div>
+
+        </main>
+    </div>
+
+
+    <!-- NEW SECTION 1: Featured Categories (Icons) -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-dice"></i>
+                    <h3>Card Magic</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Mentalism</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-hat-wizard"></i>
+                    <h3>Stage Illusions</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Street Magic</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Best Sellers Strip -->
+    <section class="section-padding">
+        <div class="container">
+            <h2>Best Sellers</h2>
+            <div class="carousel-container" style="justify-content: center; flex-wrap: wrap;">
+                <div class="product-card carousel-item" style="flex: 0 0 250px;">
+                    <div class="product-image"><img src="assets/images/product-cards.png" alt="Card Deck"></div>
+                    <div class="product-details">
+                        <h4>Phantom Deck</h4>
+                        <span class="product-price">$20.00</span>
+                    </div>
+                </div>
+                <div class="product-card carousel-item" style="flex: 0 0 250px;">
+                    <div class="product-image"><img src="assets/images/product-levitation.png" alt="Ring"></div>
+                    <div class="product-details">
+                        <h4>Zero Gravity Ring</h4>
+                        <span class="product-price">$55.00</span>
+                    </div>
+                </div>
+                <div class="product-card carousel-item" style="flex: 0 0 250px;">
+                    <div class="product-image"><img src="assets/images/product-flame.png" alt="Wallet"></div>
+                    <div class="product-details">
+                        <h4>Inferno Wallet</h4>
+                        <span class="product-price">$45.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION: New to Magic -->
+    <section class="cta-shop" style="margin-top: 40px; margin-bottom: 40px;">
+        <div class="container">
+            <div class="cta-box-shop">
+                <h2>New to Magic? Start Here</h2>
+                <p>Hand-picked beginner-friendly tricks with step-by-step tutorials.</p>
+                <a href="tutorials.html" class="btn btn-primary">Explore Beginner Kits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                            alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+                    <p>Unleashing the impossible since 2015. Your source for professional magic supplies and world-class
+                        illusions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="live-shows.html">Live Shows</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contact@mysticarcana.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> London, United Kingdom</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2026 MysticArcana Magic Supplies. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

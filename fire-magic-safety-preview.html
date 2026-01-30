@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety with Fire Magic - Preview - MysticArcana</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .preview-container {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .video-placeholder .play-btn {
+            position: absolute;
+            font-size: 5rem;
+            color: #fff;
+            filter: drop-shadow(0 0 20px var(--secondary-glow));
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .video-placeholder .play-btn:hover {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+
+        .preview-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .preview-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .preview-info p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 100px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stat-value {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .preview-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                    alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+
+            <nav class="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="tutorials.html" class="nav-link active">Tutorials</a></li>
+                    <li><a href="live-shows.html" class="nav-link">Live Shows</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="mobile-only"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm desktop-only">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm desktop-only">Sign Up</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container preview-container">
+        <div class="video-placeholder">
+            <img src="assets/images/product-flame.png" alt="Fire Magic Safety Preview">
+            <i class="fas fa-play-circle play-btn"></i>
+        </div>
+
+        <div class="preview-details">
+            <div class="preview-info">
+                <h1>Safety with Fire Magic</h1>
+                <p>Respect the element. Fire is one of the most dangerous and visually stunning elements a magician can
+                    use. This preview covers the absolute "Must-Haves" for any fire performance, including fire
+                    extinguishers, safe fuels, and clothing choices. We demonstrate the proper way to ignite and
+                    extinguish flash paper safely.</p>
+
+                <h3>What you'll learn in the full course:</h3>
+                <ul class="benefit-list" style="margin-top: 20px; list-style: none;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-magic"
+                            style="color: var(--secondary-color); margin-right: 15px;"></i> Handling flash products
+                        safely</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-magic"
+                            style="color: var(--secondary-color); margin-right: 15px;"></i> Proper storage of flammable
+                        materials</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-magic"
+                            style="color: var(--secondary-color); margin-right: 15px;"></i> Emergency protocols and
+                        fire-out procedures</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-magic"
+                            style="color: var(--secondary-color); margin-right: 15px;"></i> Fire handlings for stage vs
+                        close-up</li>
+                </ul>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-card">
+                    <div class="stat-item">
+                        <span class="stat-label">Duration</span>
+                        <span class="stat-value">28 mins Preview</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Skill Level</span>
+                        <span class="stat-value">Advanced / Pro</span>
+                    </div>
+                    <div class="stat-item" style="border: none; margin-bottom: 25px;">
+                        <span class="stat-label">Full Length</span>
+                        <span class="stat-value">1.5 Hours</span>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%; padding: 15px;">Unlock Full
+                        Tutorial</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                            alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+                    <p>Unleashing the impossible since 2015. Your source for professional magic supplies and world-class
+                        illusions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="live-shows.html">Live Shows</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contact@mysticarcana.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> London, United Kingdom</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2026 MysticArcana Magic Supplies. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

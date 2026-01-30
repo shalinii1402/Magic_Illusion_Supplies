@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysticArcana - Cinematic Home</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                    alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+
+            <nav class="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
+                    <li><a href="live-shows.html" class="nav-link">Live Shows</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="mobile-only"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm desktop-only">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm desktop-only">Sign Up</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Split Hero -->
+    <div class="split-hero">
+        <div class="split-hero-left">
+            <h1 style="font-size: 3.5rem; text-transform: uppercase; line-height: 1.1;">Magic Is Not A Secret Anymore
+            </h1>
+            <p style="font-size: 1.2rem; margin: 30px 0;">Step into a world where reality bends and the impossible
+                becomes your playground.</p>
+            <div>
+                <a href="shop.html" class="btn btn-primary">Explore The Magic</a>
+            </div>
+        </div>
+        <div class="split-hero-right"></div>
+    </div>
+
+    <!-- New Arrivals Carousel -->
+    <section>
+        <div class="container">
+            <h2>New Attractions</h2>
+            <div class="carousel-container">
+                <!-- Items -->
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img src="assets/images/product-cards.png" alt="Card"></div>
+                    <div class="product-details">
+                        <h4>Phantom Deck</h4>
+                        <span class="product-price">$20.00</span>
+                    </div>
+                </div>
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img src="assets/images/product-flame.png" alt="Fire"></div>
+                    <div class="product-details">
+                        <h4>Inferno Wallet</h4>
+                        <span class="product-price">$45.00</span>
+                    </div>
+                </div>
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img src="assets/images/product-levitation.png" alt="Ring"></div>
+                    <div class="product-details">
+                        <h4>Zero Gravity Ring</h4>
+                        <span class="product-price">$55.00</span>
+                    </div>
+                </div>
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img src="assets/images/hero-bg.png" alt="Kit"></div>
+                    <div class="product-details">
+                        <h4>Grand Illusion Kit</h4>
+                        <span class="product-price">$120.00</span>
+                    </div>
+                </div>
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img src="assets/images/product-cards.png" alt="Marked"></div>
+                    <div class="product-details">
+                        <h4>NOC Black Deck</h4>
+                        <span class="product-price">$15.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Edition Banner -->
+    <section class="timer-banner">
+        <div class="container">
+            <h3>Limited Edition: The Vanishing Cabinet</h3>
+            <p>Only 5 units remaining for this season.</p>
+            <div class="timer-display" id="countdown">24:00:00</div>
+            <a href="shop.html" class="btn btn-primary">Secure Yours Now</a>
+        </div>
+    </section>
+
+    <!-- Call to Action / Email -->
+    <section style="text-align: center; padding: 100px 0; background: var(--bg-card);">
+        <div class="container">
+            <h2>Become a Professional Today</h2>
+            <p>Join 50,000+ magicians and get exclusive secrets delivered to your inbox.</p>
+            <form style="max-width: 500px; margin: 30px auto; display: flex; gap: 10px;">
+                <input type="email" placeholder="Enter your email" required
+                    style="flex: 1; padding: 15px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: #fff;">
+                <button type="submit" class="btn btn-primary" style="border-radius: 50px;">Join</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2026 MysticArcana Magic Supplies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

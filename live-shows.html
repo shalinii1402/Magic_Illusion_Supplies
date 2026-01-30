@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Magic Shows - MysticArcana</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .show-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .show-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .show-image {
+            height: 200px;
+            background-color: #222;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .show-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .show-card:hover .show-image img {
+            transform: scale(1.1);
+        }
+
+        .show-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .show-details {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .show-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .show-location {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .show-location i {
+            color: var(--secondary-color);
+        }
+
+        .book-btn {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                    alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+
+            <nav class="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
+                    <li><a href="live-shows.html" class="nav-link active">Live Shows</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="mobile-only"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm desktop-only">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm desktop-only">Sign Up</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="height: 60vh;">
+        <div class="hero-content">
+            <h1>Experience the Magic Live</h1>
+            <p>Witness the impossible unfold right before your eyes</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 80px 20px;">
+        <div class="shows-grid">
+            <!-- Show 1 -->
+            <div class="show-card">
+                <div class="show-image">
+                    <img src="assets/images/hero-bg.png" alt="Grand Illusion Show">
+                    <span class="show-date">Oct 15</span>
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">The Grand Illusion Night</h3>
+                    <div class="show-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Royal Theater, London</span>
+                    </div>
+                    <p>An evening of large-scale stage illusions featuring the vanishing of a live elephant.</p>
+                    <a href="grand-illusion-night-booking.html" class="btn btn-primary book-btn">Book Tickets</a>
+                </div>
+            </div>
+
+            <!-- Show 2 -->
+            <div class="show-card">
+                <div class="show-image">
+                    <img src="https://images.pexels.com/photos/4173858/pexels-photo-4173858.jpeg" alt="Close-Up Magic">
+                    <span class="show-date">Nov 02</span>
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">Intimate Deceptions</h3>
+                    <div class="show-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>The Black Rabbit, NYC</span>
+                    </div>
+                    <p>Experience sleight of hand up close in an exclusive, 50-seat underground venue.</p>
+                    <a href="intimate-deceptions-booking.html" class="btn btn-primary book-btn">Book Tickets</a>
+                </div>
+            </div>
+
+            <!-- Show 3 -->
+            <div class="show-card">
+                <div class="show-image">
+                    <img src="https://images.pexels.com/photos/20797900/pexels-photo-20797900.jpeg"
+                        alt="Mentalism Show">
+                    <span class="show-date">Dec 10</span>
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">Mind Over Matter</h3>
+                    <div class="show-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Orpheum Theatre, LA</span>
+                    </div>
+                    <p>A shocking display of mentalism and psychological reading that will leave you questioning
+                        reality.</p>
+                    <a href="mind-over-matter-booking.html" class="btn btn-primary book-btn">Book Tickets</a>
+                </div>
+            </div>
+
+            <!-- Show 4 -->
+            <div class="show-card">
+                <div class="show-image">
+                    <img src="https://images.pexels.com/photos/6357543/pexels-photo-6357543.jpeg"
+                        alt="Fire Mystery Show">
+                    <span class="show-date">Jan 20</span>
+                </div>
+                <div class="show-details">
+                    <h3 class="show-title">The Fire Mystery Show</h3>
+                    <div class="show-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Downtown Chicago</span>
+                    </div>
+                    <p>A high-energy performance featuring daring fire escapes and pyro-illusions.</p>
+                    <a href="fire-mystery-show-booking.html" class="btn btn-primary book-btn">Book Tickets</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Past Performances Gallery -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2>Past Performances</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <img src="assets/images/hero-bg.png" alt="Show 1"
+                    style="border-radius: var(--border-radius); width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="assets/images/product-cards.png" alt="Show 2"
+                    style="border-radius: var(--border-radius); width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="assets/images/product-levitation.png" alt="Show 3"
+                    style="border-radius: var(--border-radius); width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 3: Why Book Our Show -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Audience Interaction</h3>
+                    <p>We don't just perform for you; we perform WITH you.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-star feature-icon"></i>
+                    <h3>Award Winning</h3>
+                    <p>Recognized by the International Brotherhood of Magicians.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3>Custom Acts</h3>
+                    <p>Tailored performances for corporate events and private parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 4: Booking Call to Action -->
+    <section class="section-padding"
+        style="background: linear-gradient(135deg, #000, #222); padding: 80px 0; text-align: center; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 style="color: var(--accent-color);">Book MysticArcana For Your Event</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem; color: #ccc;">Make your next event unforgettable with
+                world-class illusions.</p>
+            <a href="contact.html" class="btn btn-primary">Request Booking Info</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                            alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+                    <p>Unleashing the impossible since 2015. Your source for professional magic supplies and world-class
+                        illusions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="live-shows.html">Live Shows</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contact@mysticarcana.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> London, United Kingdom</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2026 MysticArcana Magic Supplies. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

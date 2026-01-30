@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Tutorials - MysticArcana</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .tutorial-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .tutorial-thumb {
+            height: 200px;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tutorial-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .tutorial-card:hover .tutorial-thumb img {
+            opacity: 0.4;
+        }
+
+        .play-btn {
+            position: absolute;
+            font-size: 3rem;
+            color: #fff;
+            opacity: 0.8;
+            transition: transform 0.3s;
+        }
+
+        .tutorial-card:hover .play-btn {
+            transform: scale(1.2);
+            color: var(--secondary-color);
+        }
+
+        .tutorial-content {
+            padding: 20px;
+        }
+
+        .tutorial-tags {
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            margin-right: 5px;
+        }
+
+        .tag.pro {
+            background: rgba(106, 13, 173, 0.3);
+            color: #e0aaff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .tag.beginner {
+            background: rgba(0, 212, 255, 0.2);
+            color: #aaddff;
+        }
+
+        .duration {
+            float: right;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                    alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+
+            <nav class="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="tutorials.html" class="nav-link active">Tutorials</a></li>
+                    <li><a href="live-shows.html" class="nav-link">Live Shows</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="mobile-only"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm desktop-only">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm desktop-only">Sign Up</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 120px;">
+        <h2>Master The Art</h2>
+
+        <div class="tutorial-grid">
+            <!-- Tutorial 1 -->
+            <div class="tutorial-card">
+                <div class="tutorial-thumb">
+                    <img src="assets/images/product-cards.png" alt="Card Trick">
+                    <i class="fas fa-play-circle play-btn"></i>
+                </div>
+                <div class="tutorial-content">
+                    <div class="tutorial-tags">
+                        <span class="tag beginner">Beginner</span>
+                        <span class="duration">12 mins</span>
+                    </div>
+                    <h4>The Invisible Pass</h4>
+                    <p>Learn the fundamental sleight used by every professional card magician.</p>
+                    <a href="invisible-pass-preview.html" class="btn btn-secondary"
+                        style="font-size: 0.8rem; padding: 8px 15px; display: inline-block;">Watch Preview</a>
+                </div>
+            </div>
+
+            <!-- Tutorial 2 -->
+            <div class="tutorial-card">
+                <div class="tutorial-thumb">
+                    <img src="assets/images/product-levitation.png" alt="Levitation">
+                    <i class="fas fa-play-circle play-btn"></i>
+                </div>
+                <div class="tutorial-content">
+                    <div class="tutorial-tags">
+                        <span class="tag pro">Pro</span>
+                        <span class="duration">45 mins</span>
+                    </div>
+                    <h4>Ultimate Ring Levitation</h4>
+                    <p>Step-by-step masterclass on controlling the ring in mid-air.</p>
+                    <a href="ring-levitation-preview.html" class="btn btn-secondary"
+                        style="font-size: 0.8rem; padding: 8px 15px; display: inline-block;">Watch Preview</a>
+                </div>
+            </div>
+
+            <!-- Tutorial 3 -->
+            <div class="tutorial-card">
+                <div class="tutorial-thumb">
+                    <img src="assets/images/product-flame.png" alt="Fire Magic">
+                    <i class="fas fa-play-circle play-btn"></i>
+                </div>
+                <div class="tutorial-content">
+                    <div class="tutorial-tags">
+                        <span class="tag pro">Pro</span>
+                        <span class="duration">28 mins</span>
+                    </div>
+                    <h4>Safety with Fire Magic</h4>
+                    <p>Essential safety protocols and performance tips for fire effects.</p>
+                    <a href="fire-magic-safety-preview.html" class="btn btn-secondary"
+                        style="font-size: 0.8rem; padding: 8px 15px; display: inline-block;">Watch Preview</a>
+                </div>
+            </div>
+            <!-- Tutorial 4 -->
+            <div class="tutorial-card">
+                <div class="tutorial-thumb">
+                    <img src="assets/images/hero-bg.png" alt="Stage Presence">
+                    <i class="fas fa-play-circle play-btn"></i>
+                </div>
+                <div class="tutorial-content">
+                    <div class="tutorial-tags">
+                        <span class="tag beginner">Beginner</span>
+                        <span class="duration">15 mins</span>
+                    </div>
+                    <h4>Stage Presence 101</h4>
+                    <p>How to command attention and control your audience.</p>
+                    <a href="stage-presence-preview.html" class="btn btn-secondary"
+                        style="font-size: 0.8rem; padding: 8px 15px; display: inline-block;">Watch Preview</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- NEW SECTION 1: Tutorial Levels -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2>Select Your Path</h2>
+            <div class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="category-card" style="padding: 30px;">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Beginner</h3>
+                    <p>Start your journey with easy-to-learn fundamentals.</p>
+                </div>
+                <div class="category-card" style="padding: 30px;">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Intermediate</h3>
+                    <p>Expand your repertoire with advanced techniques.</p>
+                </div>
+                <div class="category-card" style="padding: 30px;">
+                    <i class="fas fa-crown"></i>
+                    <h3>Professional</h3>
+                    <p>Master stage illusions and mind-bending mentalism.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Popular Tutorials (Carousel/Grid) -->
+    <section class="section-padding">
+        <div class="container">
+            <h2>Most Watched Lessons</h2>
+            <div class="tutorial-grid">
+                <!-- Reusing existing tutorial cards structure for demo -->
+                <div class="tutorial-card">
+                    <div class="tutorial-thumb">
+                        <img src="assets/images/product-cards.png" alt="Card Force">
+                        <i class="fas fa-play-circle play-btn"></i>
+                    </div>
+                    <div class="tutorial-content">
+                        <h4>The Classic Force</h4>
+                        <p>Essential card control technique for every magician.</p>
+                        <a href="#" class="btn btn-secondary btn-sm">Watch Preview</a>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-thumb">
+                        <img src="assets/images/product-levitation.png" alt="Coin Roll">
+                        <i class="fas fa-play-circle play-btn"></i>
+                    </div>
+                    <div class="tutorial-content">
+                        <h4>The Coin Roll</h4>
+                        <p>Detailed guide to the classic coin manipulation.</p>
+                        <a href="#" class="btn btn-secondary btn-sm">Watch Preview</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 3: Learning Benefits -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div>
+                    <h2>Unlock Your Potential</h2>
+                    <ul class="benefit-list" style="list-style: none;">
+                        <li style="margin-bottom: 20px; font-size: 1.1rem;"><i class="fas fa-check-circle"
+                                style="color: var(--secondary-color); margin-right: 15px;"></i> Step-by-step HD video
+                            guidance</li>
+                        <li style="margin-bottom: 20px; font-size: 1.1rem;"><i class="fas fa-check-circle"
+                                style="color: var(--secondary-color); margin-right: 15px;"></i> Real-world performance
+                            tips</li>
+                        <li style="margin-bottom: 20px; font-size: 1.1rem;"><i class="fas fa-check-circle"
+                                style="color: var(--secondary-color); margin-right: 15px;"></i> Psychology of magic
+                            explained</li>
+                        <li style="margin-bottom: 20px; font-size: 1.1rem;"><i class="fas fa-check-circle"
+                                style="color: var(--secondary-color); margin-right: 15px;"></i> Direct access to
+                            instructor Q&A</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="assets/images/hero-bg.png" alt="Learning Magic"
+                        style="border-radius: var(--border-radius); box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 4: Call to Action -->
+    <section class="section-padding"
+        style="background: linear-gradient(135deg, var(--bg-card), var(--primary-color)); text-align: center; padding: 80px 0;">
+        <div class="container">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Start Learning Magic Today</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; color: #eee;">Join thousands of students mastering the art
+                of illusion.</p>
+            <a href="signup.html" class="btn btn-secondary"
+                style="background: #fff; color: var(--primary-color); border: none; padding: 15px 40px; font-size: 1.1rem;">Get
+                Unlimited Access</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png"
+                            alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+                    <p>Unleashing the impossible since 2015. Your source for professional magic supplies and world-class
+                        illusions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="live-shows.html">Live Shows</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contact@mysticarcana.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> London, United Kingdom</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2026 MysticArcana Magic Supplies. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
