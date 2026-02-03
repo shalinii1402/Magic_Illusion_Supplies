@@ -4,9 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MysticArcana - Cinematic Home</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <meta name="description"
+        content="Elevate your magic to professional levels with MysticArcana's cinematic experience.">
+    <title>MysticArcana | Cinematic Magic Experience</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -15,12 +23,14 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="assets/images/logo.png"
-                    alt="MysticArcana Logo">Mystic<span>Arcana</span></a>
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="MysticArcana Logo">
+                Mystic<span>Arcana</span>
+            </a>
 
             <nav class="nav-wrapper">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Home 1</a></li>
                     <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
                     <li><a href="shop.html" class="nav-link">Shop</a></li>
                     <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
@@ -47,97 +57,311 @@
         </div>
     </header>
 
-    <!-- Split Hero -->
-    <div class="split-hero reveal fade-up">
-        <div class="split-hero-left reveal left-to-right">
-            <h1 style="font-size: 3.5rem; text-transform: uppercase; line-height: 1.1;">Magic Is Not A Secret Anymore
-            </h1>
-            <p style="font-size: 1.2rem; margin: 30px 0;">Step into a world where reality bends and the impossible
-                becomes your playground.</p>
-            <div>
-                <a href="shop.html" class="btn btn-primary">Explore The Magic</a>
+    <!-- 1. Hero Section -->
+    <section class="home2-hero reveal fade-up">
+        <div class="home2-hero-content reveal pop-up">
+            <h1>Beyond Imagination</h1>
+            <p>Master the ancient arts of illusion with professional-grade supplies and world-class guidance.</p>
+            <div class="hero-buttons">
+                <a href="shop.html" class="btn btn-primary">Start Your Journey</a>
+                <a href="#masterclass" class="btn btn-secondary">Explore Masterclasses</a>
             </div>
         </div>
-        <div class="split-hero-right"></div>
-    </div>
+    </section>
 
-    <!-- New Arrivals Carousel -->
-    <section class="reveal fade-up">
+    <!-- 2. Art of Illusion (Showcase) -->
+    <section class="home2-showcase reveal fade-up">
         <div class="container">
-            <h2 class="reveal left-to-right">New Attractions</h2>
-            <div class="carousel-container">
-                <!-- Items -->
-                <div class="product-card carousel-item reveal pop-up">
-                    <div class="product-image"><img src="assets/images/product-cards.png" alt="Card"></div>
-                    <div class="product-details">
-                        <h4>Phantom Deck</h4>
-                        <span class="product-price">$20.00</span>
+            <div class="showcase-grid">
+                <div class="showcase-image reveal left-to-right">
+                    <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=2070&auto=format&fit=crop"
+                        alt="Magical Card Illusion">
+                </div>
+                <div class="showcase-content reveal fade-up">
+                    <h2>The Art of the Impossible</h2>
+                    <p>Magic is more than just tricks; it's a performance of wonder. Our curated collection of
+                        high-performance props is designed forThose who seek to transform reality into a playground of
+                        the impossible.</p>
+                    <p>From precision-engineered card decks to stage-ready illusions, every item in our inventory is
+                        tested by professional magicians to ensure flawless execution under any spotlight.</p>
+                    <a href="about.html" class="btn btn-primary">Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Masterclass Series -->
+    <section class="home2-masterclass reveal fade-up" id="masterclass">
+        <div class="container">
+            <div class="home2-section-header reveal left-to-right">
+                <h2>Masterclass Series</h2>
+                <p>Learn from the legends. Our exclusive tutorials cover everything from basic sleight of hand to grand
+                    stage illusions.</p>
+            </div>
+            <div class="masterclass-grid">
+                <div class="masterclass-card reveal pop-up">
+                    <div class="masterclass-thumb">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200"
+                            alt="Sleight of Hand">
+                        <div class="play-badge"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="masterclass-info">
+                        <h3>Sleight of Hand Fundamentals</h3>
+                        <p>Master the essential moves that form the foundation of close-up magic.</p>
+                        <div class="mc-meta">
+                            <span><i class="far fa-clock"></i> 4.5 Hours</span>
+                            <span>By The Great Alenzo</span>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card carousel-item reveal pop-up">
-                    <div class="product-image"><img src="assets/images/product-flame.png" alt="Fire"></div>
-                    <div class="product-details">
-                        <h4>Inferno Wallet</h4>
-                        <span class="product-price">$45.00</span>
+                <div class="masterclass-card reveal pop-up">
+                    <div class="masterclass-thumb">
+                        <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&q=80&w=1200"
+                            alt="Psychology of Magic">
+                        <div class="play-badge"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="masterclass-info">
+                        <h3>The Psychology of Deception</h3>
+                        <p>Learn how to control attention and manipulate perception like a pro.</p>
+                        <div class="mc-meta">
+                            <span><i class="far fa-clock"></i> 3.2 Hours</span>
+                            <span>By Sarah Mystique</span>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card carousel-item reveal pop-up">
-                    <div class="product-image"><img src="assets/images/product-levitation.png" alt="Ring"></div>
-                    <div class="product-details">
-                        <h4>Zero Gravity Ring</h4>
-                        <span class="product-price">$55.00</span>
+                <div class="masterclass-card reveal pop-up">
+                    <div class="masterclass-thumb">
+                        <img src="https://images.pexels.com/photos/11634143/pexels-photo-11634143.jpeg"
+                            alt="Stage Presence">
+                        <div class="play-badge"><i class="fas fa-play"></i></div>
                     </div>
-                </div>
-                <div class="product-card carousel-item reveal pop-up">
-                    <div class="product-image"><img src="assets/images/hero-bg.png" alt="Kit"></div>
-                    <div class="product-details">
-                        <h4>Grand Illusion Kit</h4>
-                        <span class="product-price">$120.00</span>
-                    </div>
-                </div>
-                <div class="product-card carousel-item reveal pop-up">
-                    <div class="product-image"><img src="assets/images/product-cards.png" alt="Marked"></div>
-                    <div class="product-details">
-                        <h4>NOC Black Deck</h4>
-                        <span class="product-price">$15.00</span>
+                    <div class="masterclass-info">
+                        <h3>Grand Stage Presence</h3>
+                        <p>Command the stage and captivate large audiences with your performance.</p>
+                        <div class="mc-meta">
+                            <span><i class="far fa-clock"></i> 5.8 Hours</span>
+                            <span>By Mystic Master</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Limited Edition Banner -->
-    <section class="timer-banner reveal fade-up">
-        <div class="container reveal pop-up">
-            <h3>Limited Edition: The Vanishing Cabinet</h3>
-            <p>Only 5 units remaining for this season.</p>
-            <div class="timer-display" id="countdown">24:00:00</div>
-            <a href="shop.html" class="btn btn-primary">Secure Yours Now</a>
+    <!-- 4. Community (Reaction Gallery) -->
+    <section class="home2-community reveal fade-up">
+        <div class="container">
+            <div class="home2-section-header">
+                <h2>Moments of Wonder</h2>
+                <p>Join thousands of magicians worldwide who are creating unforgettable experiences every single day.
+                </p>
+            </div>
+            <div class="reaction-grid">
+                <div class="reaction-item reveal pop-up">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800"
+                        alt="Performance 1">
+                    <div class="reaction-overlay">
+                        <h4>Street Magic NYC</h4>
+                        <p>Created with MysticArcana Cards</p>
+                    </div>
+                </div>
+                <div class="reaction-item reveal pop-up">
+                    <img src="https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?auto=format&fit=crop&q=80&w=800"
+                        alt="Performance 2">
+                    <div class="reaction-overlay">
+                        <h4>Theater Tour</h4>
+                        <p>Stage Prop: Floating Rose</p>
+                    </div>
+                </div>
+                <div class="reaction-item reveal pop-up">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=800"
+                        alt="Performance 3">
+                    <div class="reaction-overlay">
+                        <h4>Club Deception</h4>
+                        <p>Mentalism Masterclass Graduate</p>
+                    </div>
+                </div>
+                <div class="reaction-item reveal pop-up">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=800"
+                        alt="Performance 4">
+                    <div class="reaction-overlay">
+                        <h4>Close-Up Showcase</h4>
+                        <p>Precision Coin Magic</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Call to Action / Email -->
-    <section class="reveal fade-up" style="text-align: center; padding: 100px 0; background: var(--bg-card);">
-        <div class="container reveal pop-up">
-            <h2>Become a Professional Today</h2>
-            <p>Join 50,000+ magicians and get exclusive secrets delivered to your inbox.</p>
-            <form style="max-width: 500px; margin: 30px auto; display: flex; gap: 10px;">
-                <input type="email" placeholder="Enter your email" required
-                    style="flex: 1; padding: 15px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: #fff;">
-                <button type="submit" class="btn btn-primary" style="border-radius: 50px;">Join</button>
-            </form>
+    <!-- 5. Live Events -->
+    <section class="home2-events reveal fade-up">
+        <div class="container">
+            <div class="home2-section-header">
+                <h2>Upcoming Live Events</h2>
+                <p>Witness the impossible in person or join our live interactive streaming workshops.</p>
+            </div>
+            <div class="event-list">
+                <div class="event-row reveal left-to-right">
+                    <div class="event-date">
+                        <span>15</span>
+                        FEB
+                    </div>
+                    <div class="event-details">
+                        <h3>The Dark Room: Close-Up Session</h3>
+                        <p>London, UK | The Magic Circle Hall</p>
+                    </div>
+                    <a href="live-shows.html" class="btn btn-secondary btn-sm">Book Tickets</a>
+                </div>
+                <div class="event-row reveal left-to-right">
+                    <div class="event-date">
+                        <span>22</span>
+                        FEB
+                    </div>
+                    <div class="event-details">
+                        <h3>Virtual Workshop: Advanced Palming</h3>
+                        <p>Live Stream | Interactive Zoom Session</p>
+                    </div>
+                    <a href="live-shows.html" class="btn btn-secondary btn-sm">Reserve Spot</a>
+                </div>
+                <div class="event-row reveal left-to-right">
+                    <div class="event-date">
+                        <span>05</span>
+                        MAR
+                    </div>
+                    <div class="event-details">
+                        <h3>Mystic Arcana Annual Convention</h3>
+                        <p>Las Vegas, NV | Mirage Grand Ballroom</p>
+                    </div>
+                    <a href="live-shows.html" class="btn btn-secondary btn-sm">Waitlist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Membership -->
+    <section class="home2-membership reveal fade-up">
+        <div class="container">
+            <div class="home2-section-header">
+                <h2>The Inner Circle</h2>
+                <p>Unlock exclusive access to secret vaults, early product releases, and member-only tutorials.</p>
+            </div>
+            <div class="membership-grid">
+                <div class="member-card reveal pop-up">
+                    <h3>Apprentice</h3>
+                    <div class="member-price">$9<span>/mo</span></div>
+                    <ul class="member-features">
+                        <li><i class="fas fa-check"></i> 10% Shop Discount</li>
+                        <li><i class="fas fa-check"></i> Basic Tutorial Library</li>
+                        <li><i class="fas fa-check"></i> Monthly Newsletter</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="member-card featured reveal pop-up">
+                    <div class="featured-label">Most Popular</div>
+                    <h3>Illusionist</h3>
+                    <div class="member-price">$29<span>/mo</span></div>
+                    <ul class="member-features">
+                        <li><i class="fas fa-check"></i> 20% Shop Discount</li>
+                        <li><i class="fas fa-check"></i> Full Masterclass Library</li>
+                        <li><i class="fas fa-check"></i> Early Access to Drops</li>
+                        <li><i class="fas fa-check"></i> Member Only Forum</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-primary">Join Now</a>
+                </div>
+                <div class="member-card reveal pop-up">
+                    <h3>Grand Master</h3>
+                    <div class="member-price">$99<span>/mo</span></div>
+                    <ul class="member-features">
+                        <li><i class="fas fa-check"></i> 30% Shop Discount</li>
+                        <li><i class="fas fa-check"></i> Personal Mentor Sessions</li>
+                        <li><i class="fas fa-check"></i> Limited Edition Gifts</li>
+                        <li><i class="fas fa-check"></i> VIP Event Access</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-secondary">Go Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Box Section -->
+    <section class="home2-cta reveal fade-up">
+        <div class="container">
+            <div class="cta-container reveal pop-up">
+                <h2>Ready to Amaze?</h2>
+                <p>Join over 50,000 magicians who trust MysticArcana for their performances. Start your journey today
+                    and unlock the secrets of the impossible.</p>
+                <div class="cta-btns">
+                    <a href="signup.html" class="btn btn-primary">Join The Inner Circle</a>
+                    <a href="shop.html" class="btn btn-secondary">Browse Collection</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="copyright">
-                <p>&copy; 2026 MysticArcana Magic Supplies.</p>
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="MysticArcana Logo">
+                        Mystic<span>Arcana</span>
+                    </a>
+                    <p>Unleashing the impossible since 2015. Your source for professional magic supplies and world-class
+                        illusions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="live-shows.html">Live Shows</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contact@mysticarcana.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> London, United Kingdom</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2026 MysticArcana Magic Supplies. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
 

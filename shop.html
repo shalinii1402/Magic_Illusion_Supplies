@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .page-header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero-bg.png');
+            background-image: linear-gradient(rgba(0, 0, 10, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             padding: 160px 20px 80px;
@@ -31,15 +31,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            /* Additional Dark Overlay */
+            background: rgba(0, 0, 0, 0.2);
+            /* Reduced from 0.5 for better image visibility */
             z-index: 1;
         }
 
         /* Light Theme specific overlay */
         [data-theme="light"] .page-header::before {
-            background: rgba(255, 255, 255, 0.3);
-            /* Lighter overlay for light theme */
+            background: rgba(255, 255, 255, 0.6);
+            /* Increased for better text contrast on light bg */
         }
 
         .page-header h1,
@@ -78,11 +78,25 @@
 
         @media (max-width: 768px) {
             .page-header {
-                padding: 140px 20px 60px;
+                padding: 120px 20px 50px;
+                /* Reduced padding */
             }
 
             .page-header h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                /* Reduced from 2.5rem */
+                line-height: 1.2;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            [data-theme="light"] .page-header h1 {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.5);
+                /* Added extra glow for visibility on mobile */
             }
         }
 
@@ -160,6 +174,89 @@
                 position: static;
             }
         }
+
+        /* Best Sellers Grid */
+        .best-sellers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .best-sellers-grid .product-card {
+            max-width: 100%;
+        }
+
+        .best-sellers-grid .product-image {
+            height: 200px;
+        }
+
+        .best-sellers-grid .add-to-cart {
+            width: 100%;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* CTA Shop Section */
+        .cta-shop {
+            padding: 60px 0;
+            background: var(--bg-color);
+        }
+
+        .cta-box-shop {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-box-shop h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box-shop p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-box-shop .btn {
+            background: #fff;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .cta-box-shop .btn:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        @media (max-width: 992px) {
+            .best-sellers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .best-sellers-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-box-shop {
+                padding: 40px 25px;
+            }
+
+            .cta-box-shop h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -173,7 +270,8 @@
 
             <nav class="nav-wrapper">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                     <li><a href="shop.html" class="nav-link active">Shop</a></li>
                     <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
                     <li><a href="live-shows.html" class="nav-link">Live Shows</a></li>
@@ -249,7 +347,8 @@
                 <!-- Product 1 -->
                 <div class="product-card reveal pop-up">
                     <div class="product-image">
-                        <img src="assets/images/product-cards.png" alt="Ghostly Card Deck">
+                        <img src="https://images.pexels.com/photos/6014324/pexels-photo-6014324.jpeg"
+                            alt="Ghostly Card Deck">
                     </div>
                     <div class="product-details">
                         <h4 class="product-title">Ghostly Card Deck</h4>
@@ -264,7 +363,8 @@
                 <!-- Product 2 -->
                 <div class="product-card reveal pop-up">
                     <div class="product-image">
-                        <img src="assets/images/product-levitation.png" alt="Levitation Ring">
+                        <img src="https://images.pexels.com/photos/2757895/pexels-photo-2757895.jpeg"
+                            alt="Levitation Ring">
                     </div>
                     <div class="product-details">
                         <h4 class="product-title">Levitation Ring</h4>
@@ -278,7 +378,8 @@
                 <!-- Product 3 -->
                 <div class="product-card reveal pop-up">
                     <div class="product-image">
-                        <img src="assets/images/product-flame.png" alt="Eternal Flame Wallet">
+                        <img src="https://images.pexels.com/photos/19354930/pexels-photo-19354930.jpeg"
+                            alt="Eternal Flame Wallet">
                     </div>
                     <div class="product-details">
                         <h4 class="product-title">Eternal Flame Wallet</h4>
@@ -363,29 +464,45 @@
     </section>
 
     <!-- NEW SECTION 2: Best Sellers Strip -->
-    <section class="section-padding reveal fade-up">
-        <div class="container">
-            <h2 class="reveal left-to-right">Best Sellers</h2>
-            <div class="carousel-container" style="justify-content: center; flex-wrap: wrap;">
-                <div class="product-card carousel-item" style="flex: 0 0 250px;">
-                    <div class="product-image"><img src="assets/images/product-cards.png" alt="Card Deck"></div>
+    <section class="section-padding reveal fade-up" style="background: var(--bg-secondary);">
+        <div class="container" style="text-align: center;">
+            <h2 class="reveal left-to-right" style="margin-bottom: 50px;">Best Sellers</h2>
+            <div class="best-sellers-grid">
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img
+                            src="https://images.pexels.com/photos/6944355/pexels-photo-6944355.jpeg" alt="Card Deck">
+                    </div>
                     <div class="product-details">
                         <h4>Phantom Deck</h4>
                         <span class="product-price">$20.00</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
-                <div class="product-card carousel-item" style="flex: 0 0 250px;">
-                    <div class="product-image"><img src="assets/images/product-levitation.png" alt="Ring"></div>
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img
+                            src="https://images.unsplash.com/photo-1582266255765-fa5cf1a1d501?q=80&w=2070&auto=format&fit=crop"
+                            alt="Ring"></div>
                     <div class="product-details">
                         <h4>Zero Gravity Ring</h4>
                         <span class="product-price">$55.00</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
-                <div class="product-card carousel-item" style="flex: 0 0 250px;">
-                    <div class="product-image"><img src="assets/images/product-flame.png" alt="Wallet"></div>
+                <div class="product-card carousel-item">
+                    <div class="product-image"><img
+                            src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop"
+                            alt="Wallet"></div>
                     <div class="product-details">
                         <h4>Inferno Wallet</h4>
                         <span class="product-price">$45.00</span>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -393,8 +510,8 @@
     </section>
 
     <!-- CTA SECTION: New to Magic -->
-    <section class="cta-shop" style="margin-top: 40px; margin-bottom: 40px;">
-        <div class="container">
+    <section class="cta-shop">
+        <div class="container" style="text-align: center;">
             <div class="cta-box-shop reveal pop-up">
                 <h2>New to Magic? Start Here</h2>
                 <p>Hand-picked beginner-friendly tricks with step-by-step tutorials.</p>
@@ -417,6 +534,7 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="tutorials.html">Tutorials</a></li>
                         <li><a href="live-shows.html">Live Shows</a></li>
