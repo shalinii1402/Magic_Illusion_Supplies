@@ -519,7 +519,7 @@ header {
     min-height: 100vh;
     display: flex;
     align-items: center;
-
+    justify-content: center;
     text-align: center;
     background-size: cover;
     background-position: center;
@@ -536,15 +536,15 @@ header {
 }
 
 .hero-home2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1523240715632-d984bb4b995e?q=80&w=2070&auto=format&fit=crop');
 }
 
 .hero-shows {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=2069&auto=format&fit=crop');
 }
 
 .hero-contact {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');
 }
 
 .hero-shop {
@@ -552,28 +552,28 @@ header {
 }
 
 /* Light Theme Overrides for Hero Gradients */
+[data-theme="light"] .hero {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=2070&auto=format&fit=crop');
+}
+
 [data-theme="light"] .hero-home {
     background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop');
 }
 
 [data-theme="light"] .hero-home2 {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1523240715632-d984bb4b995e?q=80&w=2070&auto=format&fit=crop');
 }
 
 [data-theme="light"] .hero-shows {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=2069&auto=format&fit=crop');
 }
 
 [data-theme="light"] .hero-contact {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');
 }
 
 [data-theme="light"] .hero-shop {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2070&auto=format&fit=crop');
-}
-
-[data-theme="light"] .hero {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2070&auto=format&fit=crop');
 }
 
 .hero::before {
@@ -592,6 +592,7 @@ header {
     z-index: 2;
     max-width: 900px;
     padding: 60px 40px;
+    text-align: center;
     background: rgba(0, 0, 0, 0.4);
     /* Overlay for better text readability */
     border-radius: 20px;
@@ -1770,17 +1771,32 @@ footer {
     }
 
     h1 {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
+        letter-spacing: 2px !important;
     }
 
     h2 {
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
+    }
+
+    .hero h1,
+    .hero-home2 h1 {
+        font-size: 2.5rem !important;
+        letter-spacing: 2px !important;
     }
 }
 
 @media (max-width: 480px) {
-    .home2-hero h1 {
-        font-size: 2.22rem !important;
+
+    .hero h1,
+    .hero-home2 h1 {
+        font-size: 1.8rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .hero p {
+        font-size: 1.1rem !important;
+        margin-bottom: 25px !important;
     }
 
     .cta-container h2 {
