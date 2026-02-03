@@ -179,6 +179,21 @@
         .auth-footer a {
             color: var(--primary-color);
             font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .auth-footer a:hover {
+            color: var(--secondary-color);
+            text-shadow: 0 0 8px var(--secondary-glow);
+            text-decoration: underline;
+        }
+
+        .auth-footer a:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 4px;
+            border-radius: 2px;
         }
 
         .auth-options {
