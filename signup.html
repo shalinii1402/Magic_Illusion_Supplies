@@ -10,15 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .auth-section {
-            padding: 60px 20px;
-            min-height: 100vh;
+            padding: 20px;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--bg-color);
             position: relative;
-            overflow-x: hidden;
-            /* Prevents horizontal overflow/drifting on tablets */
+            overflow: hidden;
         }
 
         /* Floating Theme Toggle */
@@ -49,15 +48,17 @@
 
         .auth-box {
             background: var(--bg-card);
-            padding: 40px;
+            padding: 30px 40px;
             border-radius: 24px;
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
             border: 1px solid var(--border-color);
             backdrop-filter: blur(20px);
             text-align: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             animation: fadeIn 0.6s ease-out;
+            max-height: 95vh;
+            overflow-y: auto;
         }
 
         @keyframes fadeIn {
@@ -73,21 +74,21 @@
         }
 
         .auth-box h2 {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             color: var(--text-primary);
-            font-size: 2rem;
+            font-size: 1.8rem;
             text-shadow: none;
         }
 
         .subtitle {
-            margin-bottom: 30px;
-            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
             color: var(--text-secondary);
         }
 
         .input-group {
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: left;
         }
 
@@ -125,9 +126,9 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
             cursor: pointer;
         }
@@ -142,9 +143,9 @@
             display: flex;
             align-items: center;
             text-align: center;
-            margin: 25px 0;
+            margin: 15px 0;
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .separator::before,
@@ -169,8 +170,8 @@
         }
 
         .social-btn {
-            width: 54px;
-            height: 54px;
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -190,8 +191,8 @@
         }
 
         .auth-footer {
-            margin-top: 25px;
-            font-size: 0.95rem;
+            margin-top: 15px;
+            font-size: 0.9rem;
             color: var(--text-secondary);
         }
 
@@ -216,18 +217,18 @@
         }
 
         .auth-brand {
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             text-decoration: none;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
         }
 
         .auth-brand img {
-            height: 45px;
+            height: 35px;
             width: auto;
             filter: drop-shadow(0 0 10px var(--primary-glow));
             flex-shrink: 0;
@@ -235,7 +236,7 @@
 
         .auth-brand span {
             font-family: var(--font-heading);
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--text-primary);
             text-transform: uppercase;
@@ -246,6 +247,28 @@
         .auth-brand span i {
             font-style: normal;
             color: var(--primary-color);
+        }
+
+        @media (max-height: 700px) {
+            .auth-box {
+                padding: 20px 30px;
+            }
+
+            .auth-brand {
+                margin-bottom: 10px;
+            }
+
+            .auth-box h2 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                margin-bottom: 10px;
+            }
+
+            .auth-footer {
+                margin-top: 10px;
+            }
         }
 
         /* Responsive adjustments */

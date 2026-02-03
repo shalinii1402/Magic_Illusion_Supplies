@@ -159,7 +159,7 @@ p {
 
 /* Buttons */
 .btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 12px 30px;
@@ -1878,4 +1878,13 @@ footer {
 .product-details .btn,
 .member-card .btn {
     align-self: center;
+}
+
+@media (max-width: 992px) {
+
+    .unlock-potential-grid,
+    .meet-alenzo-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
 }
