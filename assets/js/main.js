@@ -168,5 +168,27 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.15
     });
 
+    // --- Shop Filter Toggle Logic (Mobile/Tablet) ---
+    const filterBtn = document.getElementById('filter-btn');
+    const filtersSidebar = document.getElementById('shop-filters');
+
+    if (filterBtn && filtersSidebar) {
+        filterBtn.addEventListener('click', () => {
+            filtersSidebar.classList.toggle('active');
+
+            // Optional: Toggle icon or button style when active
+            const icon = filterBtn.querySelector('i');
+            if (filtersSidebar.classList.contains('active')) {
+                icon.classList.remove('fa-filter');
+                icon.classList.add('fa-times'); // Change to close icon
+                filterBtn.innerHTML = '<i class="fas fa-times"></i> Close Filters';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-filter');
+                filterBtn.innerHTML = '<i class="fas fa-filter"></i> Filter';
+            }
+        });
+    }
+
     revealElements.forEach(el => revealObserver.observe(el));
 });

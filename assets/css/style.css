@@ -1912,3 +1912,84 @@ footer {
         gap: 30px !important;
     }
 }
+
+/* Stats Section Alignment */
+.stats-container {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+@media (max-width: 992px) {
+    .stats-container {
+        justify-content: center;
+    }
+
+    .stats-item {
+        text-align: center;
+    }
+}
+
+/* Hero Section Responsiveness Fixes */
+@media (max-width: 992px) {
+    .hero {
+        width: 100%;
+        overflow: hidden;
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        width: 90%;
+        padding: 40px 20px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+        word-wrap: break-word;
+        /* Ensure long words break if needed */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 120px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-content {
+        padding: 25px 15px;
+        width: 95%;
+    }
+}
+
+/* Experience Section Alignment */
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 992px) {
+    .experience-item {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+}

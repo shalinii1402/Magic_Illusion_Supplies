@@ -165,13 +165,41 @@
             border-radius: 4px;
         }
 
-        @media (max-width: 768px) {
+        .mobile-filter-toggle {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
             .shop-container {
                 grid-template-columns: 1fr;
             }
 
+            .mobile-filter-toggle {
+                display: block;
+            }
+
             .filters {
+                display: none;
                 position: static;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .filters.active {
+                display: block;
+                animation: fadeIn 0.3s ease-in-out;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -305,7 +333,13 @@
 
     <div class="container shop-container reveal fade-up">
         <!-- Sidebar Filters -->
-        <aside class="filters">
+        <div class="mobile-filter-toggle" style="text-align: center;">
+            <button id="filter-btn" class="btn btn-primary"
+                style="width: auto; padding: 10px 30px; margin-bottom: 20px; text-transform: none;">
+                <i class="fas fa-filter"></i> Filter
+            </button>
+        </div>
+        <aside class="filters" id="shop-filters">
             <div class="filter-group">
                 <h4>Categories</h4>
                 <label class="filter-option"><input type="checkbox"> Card Magic</label>
