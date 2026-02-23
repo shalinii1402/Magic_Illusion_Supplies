@@ -296,6 +296,7 @@ header {
     font-weight: 500;
     position: relative;
     color: var(--text-primary);
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -372,24 +373,35 @@ header {
 @media (max-width: 1200px) {
     .nav-container {
         gap: 15px;
-        /* Reduced gap from 20px */
         padding: 0 15px;
-        /* Slightly tighter container padding */
     }
 
     .nav-menu {
-        gap: 20px;
-        /* Reduced gap from 25-35px to fit better at 1024px */
+        gap: 12px;
+        /* Further reduced gap to fit 7 items on laptop screens */
     }
 
     .logo {
-        font-size: 1.3rem;
-        /* Slightly smaller logo text for 1024px */
+        font-size: 1.25rem;
+        /* Slightly smaller to save space */
+        gap: 8px;
     }
 
     .nav-link {
-        font-size: 0.95rem;
-        /* Slightly smaller font to ensure everything fits in one line */
+        font-size: 0.9rem;
+        /* Smaller font size for navigation links */
+        letter-spacing: -0.2px;
+        /* Slight tightening */
+    }
+
+    .nav-actions {
+        gap: 10px;
+        /* Reduced from 20px */
+    }
+
+    .btn-sm {
+        padding: 8px 15px;
+        /* Slightly narrower buttons */
     }
 }
 
